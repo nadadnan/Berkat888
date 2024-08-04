@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Berkat888 DikLie</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">       
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <style>
+        /*NAVIGATION*/
+        ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        ul.topnav li {
+            float: left;
+            margin: 10px;
+        }
+
+        ul.topnav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.topnav li a:hover:not(.active) {
+            background-color: #555;
+        }
+
+        ul.topnav li.right {
+            float: right;
+        }
+
+        @media screen and (max-width: 600px) {
+            ul.topnav li.right, ul.topnav li {
+                float: none;
+            }
+        }
+        /*NAVIGATION END*/
+
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            font-family: Arial, sans-serif;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* home content */
+        /* home content */
+        #home { 
+            width: 100%;
+            height: 82vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            
+            object-fit: cover;
+        }
+        /* home content End */
+        
+        .content{
+            padding: 20px;
+            margin: 0 20px;
+        }
+        
+        .content h3{
+            font-size: 50px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .content p{
+            font-size: 28px;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            line-height: 1.6;
+        }
+        
+        #btn{
+            width: 150px;
+            height: 36px;
+            margin-top: 20px;
+            background: white;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            transition: 0.5s ease;
+            cursor: pointer;
+        }
+        
+        #btn:hover{
+            background: #b2744c;
+            color: white;
+        }
+        /* home content End */
+
+        /* Gallery section */
+        #galeri {
+            padding: 50px 20px;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        #galeri h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img, .gallery-item:hover video {
+            transform: scale(1.1);
+        }
+        /* Gallery section End */
+
+
+        /*Product section */
+        #produk {
+            padding: 10px 100px;
+            background-color: #dad7d7;
+            text-align: center;
+        }
+
+        #produk h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;    
+        }
+
+        .product-item {
+            position: relative;
+            overflow: hidden;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-item p {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 200px; /* Fixed height */
+            object-fit: cover; /* Ensures image covers the area without distortion */
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.5s ease;
+        }
+
+        .product-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-item button {
+            margin-top: 10px;
+            background-color: #25d366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 23px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-item button:hover {
+            background-color: #20b358;
+        }
+
+        /*Product section End */
+
+        /*Feedback*/
+        #feedback {
+            width: 100%;
+            height: auto;
+            
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .cust-feedback {
+            background-color: #dad7d7;
+            padding: 40px 20px;
+        }
+
+        .cust-feedback h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .feedback {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .container-feedback {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .location h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .location p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .map-link:hover {
+            text-decoration: underline;
+        }
+        /*Feedback End*/
+
+
+        /* footer */
+        .footer-section {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 10px;
+        }
+
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .prev, .next,.text {font-size: 11px}
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="topnav">
+            <li><a class="logo" href="#"><img src="logo-dikli.jpeg" alt="Logo" style="height: 100px; margin: 12px;"></a></li>
+            <li><a href="https://www.facebook.com/share/g/kpe6ZX3NHByS1Vac/?mibextid=lOuIew" style="margin-top: 45px; font-size: 26px;" target="_blank"><i class="fa fa-facebook"></i></a></li>                
+            <li><a href="https://wa.me/60196837186" style="margin-top: 45px; font-size: 26px;" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+            <li><a href="https://www.tiktok.com/@diklie85?_t=8oZAUMGd5ct&_r=1" style="margin-top: 45px; font-size: 26px;" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li> 
+            <li><a href="https://maps.app.goo.gl/zejgCGYYbSyad9LL9" style="margin-top: 45px; font-size: 26px;" target="_blank"><i class="fa fa-map-marker"></i> Lokasi</a></li>                                                                    
+            <!--li><a href="#home" style="margin-top: 45px; font-size: 26px;">Halaman Utama</a></li-->                       
+            <li><a href="#produk" style="margin-top: 45px; font-size: 26px;">Produk</a></li>
+            <li><a href="#galeri" style="margin-top: 45px; font-size: 26px;">Galeri</a></li>
+            <li><a href="#feedback" style="margin-top: 45px; font-size: 26px;">Feedback</a></li>                       
+            
+        </ul>
+    </header>
+
+    <!-- About Us Section -->
+<section id="about-us" style="padding: 40px 20px; background-color: #f8f8f8; color: #333;">
+    <h1 style="text-align: center; font-size: 40px; margin-bottom: 20px;">Tentang Kami</h1>
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 14px; line-height: 1.6;">
+            Berkat 888 merupakan sebuah kedai dedak haiwan peliharaan yang ditubuhkan pada 8 Februari 2024 oleh Dik Lie. 
+            Kedai ini menawarkan pelbagai jenis dedak, vitamin, dan aksesori untuk haiwan peliharaan. 
+            
+                <br><strong>Waktu operasi:</strong> Setiap hari dari pukul <strong>9:00</strong> pagi hingga <strong>6:00</strong> petang</p>
+            <!--p style="font-size: 14px; line-height: 1.6;">"Kami menjual pelbagai jenis makanan haiwan seperti dedak lembu, kambing, itik, ayam, kucing dan burung. 
+                Aksesori sangkar burung dan vitamin burung juga ada tersedia untuk tuan/puan semua. Kami di Berkat 888 Enterprise menanti anda!"
+            </p-->
+    </div>
+</section>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 6</div>
+          <img src="kedai2.jpg" style="width:100%">
+          <div class="text" ><a href="https://maps.app.goo.gl/zejgCGYYbSyad9LL9" style="font-weight:bold; font-size:60px; color: white;" target="_blank"><i class="fa fa-map-marker"></i>Lokasi Kedai</a></div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 6</div>
+          <img src="bg1.jpg" style="width:100%">
+          
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 6</div>
+            <img src="x10.jpg" style="width:100%">
+            
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">4 / 6</div>
+            <img src="x6.jpg" style="width:100%">
+            
+          </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 6</div>
+          <img src="banner.jpg" style="width:100%">
+          
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">6 / 6</div>
+            <img src="banner-nanmb.jpeg" style="width:100%; height: 1100px;">
+            
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+          <span class="dot" onclick="currentSlide(4)"></span> 
+          <span class="dot" onclick="currentSlide(5)"></span> 
+          <span class="dot" onclick="currentSlide(6)"></span> 
+        </div>
+    
+
+    <!--Product section -->
+    <section id="produk">
+        <h1>Produk</h1>
+        <div class="product-container">
+            <div class="product-item">
+                <img src="banner.jpg" alt="Product 1">
+                <p>Vitamin Burung Panthers</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%201', '_blank')">WhatsApp</button>
+            </div> 
+            <div class="product-item">
+                <img src="mb3.jpg" alt="Product 1">
+                <p>Produk NanMb</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%201', '_blank')">WhatsApp</button>
+            </div>        
+            <div class="product-item">
+                <img src="b6.2.png" alt="Product 2">
+                <p>Makanan Kucing</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%202', '_blank')">WhatsApp</button>
+            </div>           
+            <div class="product-item">
+                <img src="b15.jpeg" alt="Product 3">
+                <p>Makanan Kucing</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%203', '_blank')">WhatsApp</button>
+            </div>
+            <div class="product-item">
+                <img src="b11.png" alt="Product 3">
+                <p>Makanan Kucing</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%203', '_blank')">WhatsApp</button>
+            </div>
+            <div class="product-item">
+                <img src="b6.jpg" alt="Product 1">
+                <p>Makanan Kucing</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%201', '_blank')">WhatsApp</button>
+            </div>
+            <div class="product-item">
+                <img src="b6.3.png" alt="Product 3">
+                <p>Makanan Kucing</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%203', '_blank')">WhatsApp</button>
+            </div>
+            <div class="product-item">
+                <img src="b14.jpg" alt="Product 3">
+                <p>Makanan Kucing</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%203', '_blank')">WhatsApp</button>
+            </div>
+            <div class="product-item">
+                <img src="b8.png" alt="Product 3">
+                <p>Makanan Kucing</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%203', '_blank')">WhatsApp</button>
+            </div>
+            <div class="product-item">
+                <img src="p12.jpg" alt="Product 3">
+                <p>Dedak Burung ADEQ</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%203', '_blank')">WhatsApp</button>
+            </div>
+            <div class="product-item">
+                <img src="b19.jpg" alt="Product 1">
+                <p>Dedak Lembu</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%201', '_blank')">WhatsApp</button>
+            </div>
+            <div class="product-item">
+                <img src="b18.png" alt="Product 2">
+                <p>Dedak Kambing</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%202', '_blank')">WhatsApp</button>
+            </div>
+            <div class="product-item">
+                <img src="b22.png" alt="Product 3">
+                <p>Dedak Itik</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%203', '_blank')">WhatsApp</button>
+            </div>
+            <div class="product-item">
+                <img src="b16.png" alt="Product 3">
+                <p>Dedak Ayam</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%203', '_blank')">WhatsApp</button>
+            </div>
+            <div class="product-item">
+                <img src="b21.png" alt="Product 3">
+                <p>Dedak Burung</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%203', '_blank')">WhatsApp</button>
+            </div>
+            <div class="product-item">
+                <img src="b17.png" alt="Product 3">
+                <p>Dedak Ikan</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%203', '_blank')">WhatsApp</button>
+            </div>           
+            <div class="product-item">
+                <img src="bg1.jpg" alt="Product 3">
+                <p>Lain-lain Produk</p>
+                <button onclick="window.open('https://wa.me/60196837186?text=I%20would%20like%20to%20order%20Product%203', '_blank')">WhatsApp</button>
+            </div> 
+            
+            <!-- Add more products as needed -->
+        </div>
+    </section>
+    <!--Product section End -->
+
+    <!-- Gallery section -->
+    <section id="galeri">
+        <h1>Galeri</h1>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="kedai.jpg" alt="Gallery Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="p16.jpg" alt="Gallery Image 6">
+            </div>
+            <div class="gallery-item">
+                <img src="x9.jpg" alt="Gallery Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="x10.jpg" alt="Gallery Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="x2.jpg" alt="Gallery Image 3">
+            </div>
+            <div class="gallery-item">
+                <img src="x11.jpg" alt="Gallery Image 4">
+            </div>
+            <div class="gallery-item">
+                <img src="x12.jpg" alt="Gallery Image 5">
+            </div>
+            <div class="gallery-item">
+                <img src="x6.jpg" alt="Gallery Image 6">
+            </div>
+            <div class="gallery-item">
+                <img src="x7.jpg" alt="Gallery Image 6">
+            </div>
+            
+            <div class="gallery-item">
+                <img src="bg1.jpg" alt="Gallery Image 6">
+            </div>
+            <div class="gallery-item">
+                <img src="x8.jpg" alt="Gallery Image 6">
+            </div>
+            <div class="gallery-item">
+                <img src="p7.jpg" alt="Gallery Image 6">
+            </div>
+
+            <div class="gallery-item">
+                <video controls>
+                    <source src="vid1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="gallery-item">
+                <video controls>
+                    <source src="vid2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="gallery-item">
+                <video controls>
+                    <source src="vid3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="gallery-item">
+                <video controls>
+                    <source src="vid4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery section end -->
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="cust-feedback">
+        <h1>Feedback Pelanggan</h1>
+        <div class="feedback">
+            <div class="container-feedback">
+                <img src="feed9.jpg" style="width: auto; height: 500px;">
+            </div>
+            <div class="container-feedback">
+                <img src="feed2.jpg" style="width: auto; height: 500px;">
+            </div>
+            <div class="container-feedback">
+                <img src="feed10.jpg" style="width: auto; height: 500px;">
+            </div>
+            <div class="container-feedback">
+                <img src="feed11.jpg" style="width: auto; height: 500px;">
+            </div>
+            <div class="container-feedback">
+                <img src="feed5.jpg" style="width: auto; height: 500px;">
+            </div>
+            <div class="container-feedback">
+                <img src="feed6.jpg" style="width: auto; height: 500px;">
+            </div>
+            <div class="container-feedback">
+                <img src="feed7.jpg" style="width: auto; height: 500px;">
+            </div>
+            <div class="container-feedback">
+                <img src="feed8.jpg" style="width: auto; height: 500px;">
+            </div>
+            <div class="container-feedback">
+                <img src="feed1.jpg" style="width: auto; height: 500px;">
+            </div>
+        </div>
+    </section>
+    <!-- Feedback Section End -->
+
+    <!-- Footer Section (optional) -->
+    <section class="footer-section">
+        &copy2024 DIKLIE BERKAT 888 | <a href="mailto:nadiyatulhusna14@gmail.com" style="color: white; font-size: 8px;">nadadnan</a>
+    </section>
+    <!-- Footer Section End -->
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 3000, // Change this value to adjust the delay between slides (in milliseconds)
+                disableOnInteraction: false,
+            },
+        });
+
+
+
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Function to change slides
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        // Function to show the current slide
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        // Function to display the slides
+        function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        }
+
+        // Auto slide functionality
+        let slideInterval = setInterval(function() {
+        plusSlides(1);
+        }, 3000); // Change this value to adjust the delay between slides (in milliseconds)
+
+        // Pause the slideshow on mouseover
+        document.querySelector('.slideshow-container').addEventListener('mouseover', function() {
+        clearInterval(slideInterval);
+        });
+
+        // Resume the slideshow on mouseout
+        document.querySelector('.slideshow-container').addEventListener('mouseout', function() {
+        slideInterval = setInterval(function() {
+            plusSlides(1);
+        }, 3000); // Match this value to the above delay
+        });
+    </script>
+
+</body>
+</html>
